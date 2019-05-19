@@ -1,0 +1,35 @@
+
+$base-font:  'Museo Sans', Arial, Helvetica, sans-serif;
+$base-lh:    1.35;
+$base-fz:    18px;
+$base-fzh2:  40px;
+$base-fw:    300;
+$base-color: #272b2d;
+$desc-color: #7d7d7d;
+
+$container--lg: 1390px;
+$container--md: 960px;
+$container--sm: 740px;
+
+// breakpoints
+$desktop: 1440;
+$desktopSmall: 1024;
+$tablet: 960;
+$tabletSmall: 768;
+$mobileBig: 680;
+$mobile: 640;
+$mobileSmall: 480;
+
+@mixin bp($point, $type: max) {
+    @media (#{$type}-width: #{$point}px) {
+        @content;
+    }
+}
+
+@mixin flex($row: row, $wrap: wrap, $justify: center, $align: center) {
+    display: flex;
+    flex-flow: $row $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+  
