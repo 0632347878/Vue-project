@@ -1,0 +1,32 @@
+@media (max-width: 1440px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 960px) {
+  .container {
+    max-width: 740px;
+  }
+  .news {
+    &__item {
+      flex: 0 0 calc(100%/2);
+    }
+  }
+  .nav {
+    &__list {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      max-width: 260px;
+    }
+    &__item {
+      width: calc(50% - 10px);
+      margin: 2px 5px;
+    }
+  }
+  .vacancies {
+    &__item {
+      flex: 1 0 100%;
+    }
+  }
+}

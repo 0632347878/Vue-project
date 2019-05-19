@@ -1,0 +1,415 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font: #{$base-fz}/#{$base-lh} $base-font;
+  color: $base-color;
+  min-width: 740px;
+  margin: 0;
+}
+
+.container {
+  max-width: $container--lg;
+  padding: 0 20px;
+  margin: 0 auto;
+  &--full {
+    max-width: 100%;
+    padding: 0;
+  }
+  &--lg {
+    max-width: 1920px;
+  }
+}
+
+.input-holder {
+  position: relative;
+}
+.error, form .success {
+  top: 115%;
+  position: absolute;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+}
+.error {
+  color: red;
+}
+.success p {
+  color: green;
+}
+
+.heading2 {
+  font: 700 #{$base-fzh2}/#{$base-lh} $base-font;
+  color: #000000;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.btn-holder {
+  text-align: center;
+}
+
+.btn-more {
+  text-transform: uppercase;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 12px 40px;
+  border: 2px solid #ff7200;
+  background-color: #ffffff;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    transition: 0.3s ease-in-out;
+    background: #ff7200;
+    box-shadow: 0 0px 10px 2px #ff7200;
+    color: #ffffff;
+  }
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  .container {
+    @include flex(row, wrap, flex-start, center);
+    padding-top: 15px;
+    min-width: 740px;
+  }
+  .logo-img {
+    width: 66px;
+    object-fit: cover;
+    height: 48px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    margin-left: 20px;
+  }
+  &__item {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    margin: 0 22px;
+  }
+  &__action {
+    text-decoration: none;
+    color: #ffffff;
+  }
+}
+
+.join {
+  margin-left: auto;
+  &__btn {
+    transition: .3s ease-in-out;
+    border: 1px solid #207cde;
+    padding: 10px 25px 6px;
+    border-radius: 4px;
+    font-family: $base-font;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    font-size: 16px;
+    font-weight: 500;
+    min-width: 125px;
+    color: #ffffff;
+    &.active {
+      background-color: #207cde;
+    }
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+    &:hover {
+      transition: .3s ease-in-out;
+      box-shadow: 0 0px 10px 2px #207cde;
+      background-color: #207cde;
+    }
+  }
+}
+
+.main {
+  min-height: 675px;
+  background:  linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(120, 120, 120, 0.15) 50%, #131313 100%), url('../assets/images/main-bg.jpg') no-repeat center;
+  background-size: cover;
+  text-align: center;
+  padding: 260px 0 30px;
+  &__title {
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    letter-spacing: 1.1px;
+  }
+  &__subtitle {
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: 3.6px;
+  }
+  &__title, &__subtitle {
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+}
+
+.advantages {
+  @include flex(row, wrap, space-between, center);
+  max-width: 925px;
+  margin: 122px auto 0;
+  &__item {
+    min-height: 150px;
+    flex: 0 0 calc(25% - 50px);
+    flex-basis: calc(25% - 50px);
+    margin: 0 25px;
+  }
+  &__item-image {
+    max-width: 88px;
+    margin-bottom: 15px;
+  }
+  &__item-description {
+    color: #ffffff;
+    font-weight: 500;
+  }
+}
+
+.company {
+  padding: 110px 0 60px;
+  &__title {
+    margin-bottom: 55px;
+  }
+}
+
+.gallery {
+  overflow: hidden;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -50px;
+    max-height: 540px;
+    overflow: hidden;
+  }
+  &__item {
+    display: flex;
+    width: 182px;
+    height: 181px;
+    .thumb {
+      object-fit: cover;
+      width: 100%;
+    }
+    .full {
+      display: none;
+    }
+  }
+}
+
+[v-cloak] {
+  opacity: 0;
+}
+
+.vacancies {
+  padding: 45px 0 65px;
+  margin-bottom: 105px;
+  &__title {
+    margin-bottom: 50px;
+  }
+  &__list {
+    margin: 0 -12px;
+    @include flex(row, wrap, center, stretch);
+  }
+  &__item {
+    padding: 25px 30px 20px;
+    margin: 0 12px 24px;
+    flex: 0 0 calc(50% - 24px);
+    flex-basis: calc(50% - 24px);
+    max-width: 660px;
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    i {
+      color: #207cde;
+      font-size: 3.1em;
+    }
+  }
+  &__item-icon {
+    margin-right: 40px;
+  }
+  &__info {
+    margin-left: 7%;
+  }
+  &__item-type {
+    font-size: 14px;
+    font-weight: 300;
+    color: #787878;
+    margin-bottom: 3px;
+    display: inline-block;
+  }
+  &__item-title {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  &__item-description {
+    font-size: 16px;
+    color: #7d7d7d;
+    font-weight: 300;
+  }
+  .btn-holder {
+    transform: translateY(90px);
+  }
+}
+
+.news {
+  padding: 85px 0 40px;
+  border: 2px solid #e3e3e3;
+  &__title {
+    margin-bottom: 50px;
+  }
+  &__list {
+    margin: 0 -12px;
+    @include flex(row, wrap, flex-start, flex-start);
+  }
+  &__item {
+    padding: 0 12px;
+    flex: 0 0 calc( 100%/3 );
+    &:nth-child(n+7) {
+      display: none;
+    }
+    &:hover {
+      .news__item-content {
+        transform: translateY(-50px);
+        transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+      }
+      .news__item-more {
+        opacity: 1;
+        transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+      }
+    }
+  }
+  &__item-title {
+    font: 400 24px/1.25 $base-font;
+    color: #000000;
+    letter-spacing: .6px;
+    margin-bottom: 10px;
+  }
+  &__item-description {
+    letter-spacing: .45px;
+    margin-bottom: 30px;
+    font-weight: 300;
+  }
+  &__item-content {
+    max-width: 400px;
+    padding: 35px 5px 20px 0;
+    background: #ffffff;
+    transform: translateY(0);
+    transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  &__item-more {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(0, 0 , 0, .3);
+    opacity: 0;
+    transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    &:before {
+      content: "";
+      display: inline-block;
+      margin-right: 10px;
+      width: 15px;
+      height: 11px;
+      background: url("../assets/images/icon_read_copy.webp");
+    }
+  }
+  .btn-holder {
+    transform: translateY(140%);
+  }
+}
+
+.footer {
+  min-height: 377px;
+  background: url("../assets/images/footer.jpg") no-repeat center;
+  background-size: cover;
+  text-align: center;
+  padding: 80px 20px 140px;
+  &__title {
+    color: #ffffff;
+    margin-bottom: 5px;
+    letter-spacing: 1.1px;
+  }
+  &__description {
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 35px;
+  }
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    &.invalid {
+      .error--invalid {
+        opacity: 1;
+        visibility: visible;
+        transition: .3s ease-in-out;
+      }
+    }
+    &.empty {
+      .error--empty {
+        opacity: 1;
+        visibility: visible;
+        transition: .3s ease-in-out;
+      }
+    }
+    &.success {
+      .success {
+        opacity: 1;
+        visibility: visible;
+        transition: .3s ease-in-out;
+      }
+    }
+  }
+  &__form-btn {
+    font-size: 16px;
+    color: #fefefe;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 14px 24px 12px;
+    background-color: #00a0de;
+    transition: .3s ease-in-out;;
+    &:hover {
+      box-shadow: 0 0 10px 2px #207cde;
+      transition: .3s ease-in-out;
+    }
+  }
+  .input-holder {
+    margin-right: 15px;
+    max-width: 310px;
+    width: 100%;
+  }
+  &__form-input {
+    min-height: 42px;
+    padding: 14px 18px 12px;
+    background: #ffffff;
+    font-size: 16px;
+    font-weight: 300;
+
+    width: 100%;
+  }
+  &__form-btn, &__form-input {
+    border: none;
+    font-family: $base-font;
+  }
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active до версии 2.1.8 */ {
+  transform: translateY(10px);
+  opacity: 0;
+}
